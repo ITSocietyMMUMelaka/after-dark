@@ -9,9 +9,6 @@
     opacity: 1;
   }
 }
-.muted {
-  color: rgba(255, 255, 255, 0.5);
-}
 .responsive-iframe {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
