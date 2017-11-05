@@ -528,7 +528,7 @@ figure a:hover {
 }
 ```
 
-Styles are inlined into the `head` of each page. If you would prefer to use external stylesheets override the `partials/global-styles.html` template, modeling from the theme's version of the file, and make any adjustments you see fit.
+Styles are inlined into the `head` of each page. If you would prefer to use external stylesheets override the `partials/inline-styles.html` template, modeling from the theme's version of the file, and make any adjustments you see fit.
 
 #### Theme Variants
 
