@@ -1,1 +1,41 @@
+body,
+.hack {
+    font-family: "Roboto", Arial, sans-serif;
+}
 
+.hack blockquote,
+.hack em,
+.hack h1,
+.hack h2,
+.hack h3,
+.hack h4,
+.hack h5,
+.hack h6,
+.hack strong {
+    font-family: "Miriam Libre", Arial, sans-serif    
+}
+
+.hack h1 {
+    font-size: 200%;
+}
+.hack h2 {
+    font-size: 140%;
+}
+.hack h3 {
+    font-size: 130%;
+}
+.hack h4 {
+    font-size: 120%;
+}
+.hack h5 {
+    font-size: 110%;
+}
+.hack h6 {
+    font-size: 100%;
+}
+
+.hack code, 
+.hack pre {
+    font-weight: normal;
+    font-family: "Ubuntu Mono", Consolas, monospace;
+}
