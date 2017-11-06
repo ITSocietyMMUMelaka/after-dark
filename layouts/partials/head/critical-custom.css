@@ -16,11 +16,12 @@ body,
 .hack h4,
 .hack h5,
 .hack h6 {
-    font-family: "Miriam Libre", Arial, sans-serif    
+    font-family: "Miriam Libre", Arial, sans-serif;
 }
 
 .hack h1 {
     font-size: 200%;
+    padding: 20px 0 35px;
 }
 .hack h2 {
     font-size: 140%;

@@ -33,6 +33,7 @@
     {{ end }}
     {{ partial "head/favicon.html" . }}
     {{ partial "inline-styles.html" . }}
+    {{ partial "inline-scripts.html" . }}
     {{ partial "external-styles.html" . }}
     {{ $lazylist := findRE "class=\".*?\\blazyload\\b.*?\"|class=lazyload\b" .Content }}<!-- http://regexr.com/3f9d1 -->
     {{ if ge (len $lazylist) 1 }}

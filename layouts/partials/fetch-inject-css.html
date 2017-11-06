@@ -1,0 +1,25 @@
+<script type="application/javascript">
+(function () {
+    if (window.fetch) return;
+    console.log("fetch-inject is not supported!");
+    {{- range . }}
+    {{ printf "doucment.write(\"<link href='%s' rel='stylesheet'>\");" . | safeJS }}
+    {{- end }}
+    document.documentElement.className += " fonts-loaded";
+})();
+</script>
+<script type="application/javascript">
+(function () {
+    if (!window.fetch) return;
+      fetchInject([
+        {{- $lastIndex := add (len .) -1 -}}
+        {{ range $i, $link := . }}
+        {{ $link -}}
+          {{- if not (eq $i $lastIndex) -}},{{- end -}}
+        {{- end }}
+      ]).then(function() {
+        console.log("fonts fetch-injected!");
+        document.documentElement.className += " fonts-loaded";
+      });
+})();
+</script>

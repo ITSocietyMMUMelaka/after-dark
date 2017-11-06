@@ -1,4 +1,5 @@
-<link href="https://fonts.googleapis.com/css?family=Miriam+Libre|Roboto|Ubuntu+Mono" rel="stylesheet">
+{{ .Scratch.Add "css" (slice "https://fonts.googleapis.com/css?family=Miriam+Libre|Roboto|Ubuntu+Mono") }}
 {{ if .Site.Params.use_pygements_css }}
-<link rel="stylesheet" href="/css/syntax.css">
+{{ .Scratch.Add "css" "/css/syntax.css" }}
 {{ end }}
+{{ partial "fetch-inject-css.html" (.Scratch.Get "css") }}
