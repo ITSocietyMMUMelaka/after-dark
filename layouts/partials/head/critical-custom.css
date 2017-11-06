@@ -1,17 +1,21 @@
 body,
-.hack {
+.hack, 
+.hack em, 
+.hack strong {
     font-family: "Roboto", Arial, sans-serif;
 }
 
+.hack em {
+    font-style: italic;
+}
+
 .hack blockquote,
-.hack em,
 .hack h1,
 .hack h2,
 .hack h3,
 .hack h4,
 .hack h5,
-.hack h6,
-.hack strong {
+.hack h6 {
     font-family: "Miriam Libre", Arial, sans-serif    
 }
 
