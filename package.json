@@ -13,12 +13,14 @@
   "scripts": {
     "update:lazysizes": "yarn upgrade lazysizes && cp -i node_modules/lazysizes/lazysizes.min.js static/js",
     "update:smoothscroll": "yarn upgrade smoothscroll && cp -i node_modules/smoothscroll-polyfill/dist/smoothscroll.js static/js",
-    "update:hackcss": "yarn upgrade hackcss && cat node_modules/hack/dist/hack.css > static/css/critical-vendor.css && cat node_modules/hack/dist/dark.css >> static/css/critical-vendor.css",
+    "update:hackcss": "yarn upgrade hackcss && cat node_modules/hack/dist/hack.css > layouts/partials/head/critical-vendor.css && cat node_modules/hack/dist/dark.css >> layouts/partials/head/critical-vendor.css",
+    "update:fetchinject": "yarn upgrade fetchinject && cp node_modules/fetch-inject/dist/fetch-inject.min.js layouts/partials/head/fetch-inject.min.js",
     "test": "while true; do head -n 100 /dev/urandom; sleep 0.1; done | hexdump -C | grep 'ca fe'",
     "release": "standard-version"
   },
   "dependencies": {
     "atom-one-pgyments": "^1.0.0",
+    "fetch-inject": "^1.9.1",
     "hack": "^0.8.0",
     "lazysizes": "^4.0.0-rc3",
     "smoothscroll-polyfill": "^0.3.4"

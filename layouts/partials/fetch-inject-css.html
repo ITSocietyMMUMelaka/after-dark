@@ -18,7 +18,7 @@
           {{- if not (eq $i $lastIndex) -}},{{- end -}}
         {{- end }}
       ]).then(function() {
-        console.log("fonts fetch-injected!");
+        console.log("fetch-injected!");
         document.documentElement.className += " fonts-loaded";
       });
 })();
