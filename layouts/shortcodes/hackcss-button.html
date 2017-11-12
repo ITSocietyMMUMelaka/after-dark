@@ -27,7 +27,7 @@ Inside a ButtonGroup:
 
 */}} -->
 {{ $type := .Get "type" }}
-{{ $body := .Get "body" | default .Inner }}
+{{ $body := .Get "text" | default .Inner }}
 {{ $isghost := .Get "isghost" }}
 {{ $isblock := .Get "isblock" }}
 {{ $action := .Get "action" }}
