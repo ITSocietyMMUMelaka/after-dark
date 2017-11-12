@@ -54,3 +54,7 @@ figure {
 figure img {
     max-width: 90%;
 }
+
+.btn {
+    font-family: inherit;
+}
