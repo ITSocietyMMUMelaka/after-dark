@@ -37,7 +37,7 @@
     {{ partial "external-styles.html" . }}
     {{ $lazylist := findRE "class=\".*?\\blazyload\\b.*?\"|class=lazyload\b" .Content }}<!-- http://regexr.com/3f9d1 -->
     {{ if ge (len $lazylist) 1 }}
-      <script async src="/js/lazysizes.min.js"></script>
+      <script async src={{ "/js/lazysizes.min.js" | relURL }}></script>
     {{ end }}
   </head>
   {{ $theme_variant := .Site.Params.theme_variant | default "hack dark" }}

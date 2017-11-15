@@ -3,7 +3,7 @@
     if (window.fetch) return;
     console.log("fetch-inject is not supported!");
     {{- range . }}
-    {{ printf "doucment.write(\"<link href='%s' rel='stylesheet'>\");" . | safeJS }}
+    {{ printf "doucment.write(\"<link href='%s' rel='stylesheet'>\");" ( . | relURL ) | safeJS }}
     {{- end }}
     document.documentElement.className += " fonts-loaded";
 })();
@@ -14,7 +14,7 @@
       fetchInject([
         {{- $lastIndex := add (len .) -1 -}}
         {{ range $i, $link := . }}
-        {{ $link -}}
+        {{ $link | relURL -}}
           {{- if not (eq $i $lastIndex) -}},{{- end -}}
         {{- end }}
       ]).then(function() {
