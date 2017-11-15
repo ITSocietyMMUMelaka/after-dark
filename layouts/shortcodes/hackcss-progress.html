@@ -4,7 +4,7 @@ Basic usage:
 {{< hackcss-progress value="30" showpercent="true" >}}
 {{< hackcss-progress value="70" showpercent="true" filltext="pemuatan" >}}
 */}} -->
-{{ $show_percent := .Get "showpercent" }}
+{{ $show_percent := .Get "showpercent" | default "true" }}
 {{ $fill_text := .Get "filltext" | default "Loading" }}
 {{ $value := .Get "value" }}
 {{ partial "components/progress.html" (dict "show_percent" $show_percent "fill_text" $fill_text "value" $value) }}

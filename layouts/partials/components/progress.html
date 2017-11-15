@@ -1,8 +1,6 @@
 {{ if eq .show_percent "true" }}
   <div class="progress-bar progress-bar-show-percent">
-    {{ with .value }}
-      <div class="progress-bar-filled" style="width:{{ . }}%" data-filled="{{ .fill_text }} {{ . }}%"></div>
-    {{ end }}
+    <div class="progress-bar-filled" style="width:{{ .value }}%" data-filled="{{ .fill_text }} {{ .value }}%"></div>
   </div>
 {{ else }}
   <div class="progress-bar">
