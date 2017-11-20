@@ -1,8 +1,15 @@
-{{ if ne .Site.Params.show_menu false }}
+{{- if ne .Site.Params.show_menu false -}}
   <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-    {{ $currentNode := . }}
+    {{- $currentNode := . }}
     {{ range .Site.Menus.main }}
-      <a itemprop="url" class="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}active{{end}}" href="{{ .URL }}"><span itemprop="name">{{ .Name }}</span></a>
-    {{ end }}
+      {{- $.Scratch.Set "isMenuActive" (or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .)) -}}
+      {{- $name := .Name | lower -}}
+      {{- with $currentNode.CurrentSection -}}
+        {{- $title := .Title -}}
+        {{- $isActive := $.Scratch.Get "isMenuActive" -}} <!-- can't directly modify outer scope variable -->
+        {{- $.Scratch.Set "isMenuActive" (or $isActive (eq (lower $title) (lower $name))) -}}
+      {{- end -}}
+      <a itemprop="url" class="{{if $.Scratch.Get "isMenuActive" }}active{{end}}" href="{{ .URL }}"><span itemprop="name">{{ .Name }}</span></a>
+    {{ end -}}
   </nav>
-{{ end }}
+{{- end -}}
